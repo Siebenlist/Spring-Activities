@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<p><span th:text="${error}"></span></p>
+	<form method="post" action="/verify">
+		<label>Enter the code:</label>
+		<input type="password" name="code">
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>
