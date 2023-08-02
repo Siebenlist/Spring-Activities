@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" action="/dashboard">
+		<label>Your Name: <input type="text" name="name" required></label>
+		<br>
+		<label for="location">Select your location: 
+		<select id="location" name="location" field="${formulario.location}">
+			  <option value="San Jose">San Jose</option>
+			  <option value="Burbank">Burbank</option>
+			  <option value="Tigre">Tigre</option>
+			  <option value="Uruguay">Uruguay</option>
+		</select>
+		<br>
+		</label>
+		<label for="language">Select your favourite language: 
+		<select id="language" name="language" field="${formulario.language}">
+			  <option value="Python">Python</option>
+			  <option value="Java">Java</option>
+			  <option value="Ruby">Ruby</option>
+			  <option value="C++">C++</option>
+		</select>
+		<br>
+		</label>
+		<label>Comment (optional):</label>
+		<br>
+		<textarea rows="10" cols="60" name="comment"></textarea>
+		<br>
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>
