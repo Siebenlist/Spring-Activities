@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Libro</title>
+</head>
+<body>
+<h1>Editar Libro</h1>
+<form th:action="@{'/api/books/' + ${book.id}}" method="POST" id="editForm">
+    <input type="hidden" name="_method" value="PUT">
+    <p>
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" th:value="${book.title}" />
+    </p>
+    <p>
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" th:text="${book.description}"></textarea>
+    </p>
+    <p>
+        <label for="language">Idioma:</label>
+        <input type="text" id="language" name="language" th:value="${book.language}" />
+    </p>
+    <p>
+        <label for="pages">Número de páginas:</label>
+        <input type="number" id="pages" name="pages" th:value="${book.numberOfPages}" />
+    </p>
+    <button type="submit">Guardar cambios</button>
+    <a href="javascript:history.back()">Volver</a>
+</form>
+
+<script>
+    document.getElementById('editForm').onsubmit = function(event) {
+        event.preventDefault();
+        fetch(this.action, {
+            method: 'PUT',
+            body: new URLSearchParams(new FormData(this))
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Actualización exitosa');
+                    window.location.href = "/books";
+                } else {
+                    alert('Error al actualizar el libro');
+                }
+            })
+            .catch(error => {
+                alert('Error al actualizar el libro');
+                console.error('Error:', error);
+            });
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>All books</title>
+</head>
+<body>
+<h1>Todos los libros</h1>
+<table>
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Language</th>
+		<th>Number of Pages</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each= "book : ${books}"}>
+		<td th:text="${book.title}"></td>
+		<td th:text="${book.description}"></td>
+		<td th:text="${book.language}"></td>
+		<td th:text="${book.numberOfPages}"></td>
+	</tr>
+	</tbody>
+</table>
+
+<a href="books/new" class="btn" >Agregar nuevo libro</a>
+
+</body>
+</html>

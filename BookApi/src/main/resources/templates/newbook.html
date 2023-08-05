@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear libros</title>
+</head>
+<body>
+<h1>Nuevo libro</h1>
+<form th:action="@{/books}" method="post" th:object="${book}">
+    <p>
+        <label>Title</label>
+        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+        <input type="text" th:field="*{title}"/>
+    </p>
+    <p>
+        <label>Description</label>
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+        <textarea th:field="*{description}"></textarea>
+    </p>
+    <p>
+        <label>Language</label>
+        <span th:if="${#fields.hasErrors('language')}" th:errors="*{language}"></span>
+        <input type="text" th:field="*{language}"/>
+    </p>
+    <p>
+        <label>Pages</label>
+        <span th:if="${#fields.hasErrors('numberOfPages')}" th:errors="*{numberOfPages}"></span>
+        <input type="number" th:field="*{numberOfPages}"/>
+    </p>
+    <input type="submit" value="Submit"/>
+</form>
+<a href="javascript:history.back()" class="btn cancel">Volver</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${book.title}"></h1>
+    <p th:text="${book.description}"/>
+    <p th:text="${book.language}"/>
+    <p th:text="${book.NumberOfPages}"/>
+    <a href="/books/${book.id}/edit">Edit Book</a>
+    <form action="/books/${book.id}" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
