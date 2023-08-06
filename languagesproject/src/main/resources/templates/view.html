@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Language</title>
+</head>
+<body>
+    <p th:text="${language.name}"></p>
+    <p th:text="${language.creator}"></p>
+    <p th:text="${language.version}"></p>
+    <form th:action="@{/delete/{id}(id=${language.id})}" method="post">
+        <input type="submit" value="Delete"/>
+    </form>
+</body>
+</html>

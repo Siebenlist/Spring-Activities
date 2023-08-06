@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Languages Dashboard</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Creator</th>
+        <th>Version</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="language : ${languages}">
+        <td><a th:href="@{/{id}(id=${language.id})}" th:text="${language.name}"></a></td>
+        <td th:text="${language.creator}"></td>
+        <td th:text="${language.version}"></td>
+        <td>
+            <form th:action="@{/edit/{id}(id=${language.id})}" method="get">
+            <input type="submit" value="Edit"/>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<form action="/home" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required minlength="2" maxlength="20"/><br/>
+    <label for="creator">Creator:</label>
+    <input type="text" id="creator" name="creator" required minlength="2" maxlength="20"/><br/>
+    <label for="version">Current Version:</label>
+    <input type="number" id="version" name="version" required/><br/>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>
