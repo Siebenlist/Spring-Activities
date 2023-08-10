@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>New License</h1>
+    <form th:action="@{/licenses/new}" method="post" th:object="${license}">
+      <label for="personName">Person: </label>
+      <select id="personName" name="personName">
+        <option th:each="person : ${persons}" th:value="${person.id}" th:text="${person.firstName + ' ' + person.lastName}"></option>
+      </select>
+        <label for="state">State: <input type="text" id="state" name="state" required/></label>
+        <label for="date">Expiration date: <input type="date" id="date" name="date" required/></label>
+        <button type="submit">Crear</button>
+    </form>
+</body>
+</html>

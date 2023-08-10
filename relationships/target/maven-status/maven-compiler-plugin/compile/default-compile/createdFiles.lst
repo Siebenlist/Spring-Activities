@@ -1,0 +1,9 @@
+com\example\relationships\controllers\LicenseController.class
+com\example\relationships\RelationshipsApplication.class
+com\example\relationships\models\License.class
+com\example\relationships\services\PersonService.class
+com\example\relationships\controllers\PersonController.class
+com\example\relationships\repositories\LicenseRepository.class
+com\example\relationships\repositories\PersonRepository.class
+com\example\relationships\models\Person.class
+com\example\relationships\services\LicenseService.class

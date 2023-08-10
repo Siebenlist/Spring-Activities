@@ -1,0 +1,9 @@
+D:\Relationships\relationships\src\main\java\com\example\relationships\RelationshipsApplication.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\models\Person.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\services\PersonService.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\models\License.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\controllers\LicenseController.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\controllers\PersonController.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\repositories\LicenseRepository.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\repositories\PersonRepository.java
+D:\Relationships\relationships\src\main\java\com\example\relationships\services\LicenseService.java
