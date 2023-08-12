@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>Create Contact</h1>
+        <form th:action="@{/contacts/new}" method="post" th:object="${contact}">
+            <label for="studentName">Student: </label>
+            <select name="studentName" id="studentName">
+                <option th:each="student : ${allStudents}" th:value="${student.id}" th:text="${student.firstName + ' ' + student.lastName}"></option>
+            </select>
+            <label for="address">Address: <input type="text" id="address" name="address" th:field="*{address}"></label>
+            <label for="city">City: <input type="text" id="city" name="city" th:field="*{city}"></label>
+            <label for="state">State: <input type="text" id="state" name="state" th:field="*{state}"></label>
+            <button type="submit">Create</button>
+        </form>
+</body>
+</html>
