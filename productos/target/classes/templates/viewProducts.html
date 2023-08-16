@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.name}">View Products</title>
+</head>
+<body>
+    <h1 th:text="${product.name}"></h1>
+
+    <h2>Categories:</h2>
+    <ul>
+        <li th:each="category : ${product.category}">
+            <span th:text="${category.name}"></span>
+        </li>
+    </ul>
+
+    <h3>Add Category:</h3>
+    <form th:action="@{/products/{id}(id=${product.id})}" method="post">
+        <input type="hidden" th:name="product.id" th:value="${product.id}">
+        <select th:name="categoryId">
+            <option th:each="category : ${allCategories}" th:value="${category.id}" th:text="${category.name}"></option>
+        </select>
+        <button type="submit">Add category</button>
+    </form>
+</body>
+</html>

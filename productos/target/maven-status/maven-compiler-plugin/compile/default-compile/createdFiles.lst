@@ -1,0 +1,10 @@
+com\example\productos\repositories\ProductRepository.class
+com\example\productos\repositories\CategoryRepository.class
+com\example\productos\services\CategoryService.class
+com\example\productos\models\Category.class
+com\example\productos\controllers\ProductController.class
+com\example\productos\models\Product.class
+com\example\productos\ProductosApplication.class
+com\example\productos\controllers\CategoryController.class
+com\example\productos\ServletInitializer.class
+com\example\productos\services\ProductService.class
